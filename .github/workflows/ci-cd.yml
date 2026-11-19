@@ -46,7 +46,7 @@ jobs:
       - uses: docker/setup-buildx-action@v3
 
       - name: Build local para teste
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           load: true
@@ -116,7 +116,7 @@ jobs:
 
       - name: Publicar imagem (latest + commit, amd64 + arm64)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           platforms: linux/amd64,linux/arm64
