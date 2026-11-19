@@ -924,6 +924,14 @@ body.modal-open { overflow: hidden; }
 .contact-text { margin-top: 20px; max-width: 52ch; color: var(--text-dim); font-size: 17px; }
 .contact-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
 .contact-actions .btn { text-transform: none; letter-spacing: .02em; font-size: 13.5px; }
+/* Celular: botões em grade ocupando a largura toda (WhatsApp e e-mail inteiros, LinkedIn e GitHub lado a lado) */
+@media (max-width: 560px) {
+  .contact-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .contact-actions .btn { justify-content: center; min-width: 0; padding-inline: 16px; }
+  .contact-actions .btn-whats,
+  .contact-actions .btn[href^="mailto:"] { grid-column: 1 / -1; }
+  .contact-actions .btn[href^="mailto:"] { overflow-wrap: anywhere; }
+}
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 32px 0; }
