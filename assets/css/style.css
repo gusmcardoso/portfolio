@@ -1063,3 +1063,44 @@ section { padding: clamp(56px, 8vh, 96px) 0; }
 
 /* Capa no lugar do placeholder dos cards menores */
 img.project-thumb { display: block; height: auto; }
+
+
+/* >>> gm-credito */
+/* Selo "Desenvolvido por {gm}" — luz verde passando da esquerda para a direita */
+.gm-credito {
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  font: 500 12px/1 "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #9AA088;
+  --gm-luz: #D4EC7E;
+  --gm-base: rgba(154, 160, 136, .9);
+  --gm-letras: #EEF0E4;
+}
+.gm-credito--claro { color: #5B6150; --gm-luz: #5E7A12; --gm-base: rgba(91, 97, 80, .95); --gm-letras: #0B0C0A; }
+.gm-credito__logo { height: 1.7em; width: auto; flex: none; color: var(--gm-letras); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .gm-credito__texto {
+    background-image: linear-gradient(100deg, var(--gm-base) 38%, var(--gm-luz) 50%, var(--gm-base) 62%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gm-credito-luz 4.5s linear infinite;
+  }
+  /* quando a luz chega ao fim do texto, o {gm} acende em verde */
+  .gm-credito__logo { animation: gm-credito-brilho 4.5s linear infinite; }
+}
+.gm-credito:hover .gm-credito__texto { -webkit-text-fill-color: var(--gm-luz); }
+@keyframes gm-credito-luz { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@keyframes gm-credito-brilho {
+  0%, 55%, 100% { filter: none; }
+  70% { filter: drop-shadow(0 0 6px var(--gm-luz)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-credito__texto, .gm-credito__logo { animation: none; }
+}
+/* <<< gm-credito */
