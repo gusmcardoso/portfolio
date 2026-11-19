@@ -112,7 +112,7 @@ jobs:
       # Emulação para gerar também a versão ARM (ex.: Oracle Cloud Free Tier / Ampere)
       - name: Configurar QEMU
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
 
       - name: Publicar imagem (latest + commit, amd64 + arm64)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
