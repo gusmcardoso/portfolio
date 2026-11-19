@@ -85,25 +85,6 @@
     counters.forEach((c) => (c.textContent = c.dataset.count));
   }
 
-  /* ---------- Filtro de projetos ---------- */
-  const filters = document.querySelectorAll('.filter');
-  const projects = document.querySelectorAll('.project');
-  filters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const f = btn.dataset.filter;
-      filters.forEach((b) => {
-        const on = b === btn;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-selected', String(on));
-      });
-      projects.forEach((p) => {
-        const show = f === 'all' || p.dataset.type === f;
-        p.classList.toggle('hidden', !show);
-        if (show) p.classList.add('visible');
-      });
-    });
-  });
-
   /* ---------- Capas dos projetos ---------- */
   // Elementos com data-capa trocam para a capa só depois que ela carrega de verdade
   // (se o arquivo ainda não existir, fica o print/placeholder atual).
