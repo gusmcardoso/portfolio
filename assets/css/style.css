@@ -1085,6 +1085,7 @@ img.project-thumb { display: block; height: auto; }
 }
 .gm-credito__logo { height: 1.7em; width: auto; flex: none; color: var(--gm-letras); }
 .gm-credito__texto { white-space: nowrap; }
+.gm-credito__ano { white-space: nowrap; color: var(--gm-base); }
 .gm-credito--compacto { font-size: 10px; letter-spacing: .04em; gap: .45em; }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .gm-credito__texto {
