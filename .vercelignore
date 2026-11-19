@@ -1,0 +1,11 @@
+# Arquivos do repositório que não devem virar páginas públicas na Vercel
+.github
+docker
+deploy
+Dockerfile
+docker-compose.yml
+.dockerignore
+.htmlvalidate.json
+credito/.htmlvalidate.json
+README.md
+logo-gm

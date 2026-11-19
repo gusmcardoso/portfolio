@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+.dockerignore
+**/.htmlvalidate.json
+deploy
+docker-compose.yml
+README.md
+**/.env
+**/*.log
+node_modules

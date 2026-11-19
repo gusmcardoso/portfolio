@@ -1,0 +1,38 @@
+# Produção (no servidor). O pipeline copia este arquivo e o Caddyfile para ~/portfolio
+# e executa:  TAG=<commit> docker compose -f docker-compose.prod.yml up -d
+# Variáveis lidas do arquivo .env ao lado (crie no servidor, veja .env.example).
+services:
+  portfolio:
+    image: ${IMAGE:-ghcr.io/gusmcardoso/portfolio}:${TAG:-latest}
+    restart: unless-stopped
+    # Nginx roda como usuário comum na porta 8080: não precisa de nenhuma capability
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    networks: [web]
+    # Sem "ports": o container só é acessível pelo Caddy, na rede interna
+
+  caddy:
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    depends_on:
+      portfolio:
+        condition: service_healthy
+    environment:
+      DOMAIN: ${DOMAIN:?defina DOMAIN no arquivo .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [web]
+
+networks:
+  web:
+
+volumes:
+  caddy_data:
+  caddy_config:

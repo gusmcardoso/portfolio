@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de logo {gm}</title>
+
+<!-- ===== Cole isto no <head> do seu portfólio ===== -->
+<link rel="icon" href="favicon/favicon.ico" sizes="any">
+<link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<meta property="og:image" content="og-image.png">
+<meta name="theme-color" content="#0B0C0A">
+<!-- ================================================= -->
+
+<style>
+  :root { --k:#0B0C0A; --k2:#1A1D16; --w:#ECEADF; --g1:#4B5320; --g3:#9DAE6A; --o:#F26B1D; --m:#8C8F84; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--k); color:var(--w); font:16px/1.6 system-ui, sans-serif; }
+  header.site { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 32px; border-bottom:1px solid var(--k2); }
+  header.site nav a { color:var(--m); text-decoration:none; margin-left:24px; font-family:ui-monospace, monospace; font-size:14px; }
+  header.site nav a:hover { color:var(--o); }
+  .logo img { height:40px; display:block; }
+  main { max-width:960px; margin:0 auto; padding:48px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 8px; } h2 { font-size:18px; margin:48px 0 12px; color:var(--g3); }
+  p { color:var(--m); margin:0 0 12px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+  .tile { border-radius:14px; padding:28px; display:grid; place-items:center; min-height:180px; }
+  .tile img { max-width:100%; height:auto; }
+  .dark { background:var(--k2); } .light { background:var(--w); }
+  pre { background:var(--k2); border-radius:12px; padding:16px; overflow:auto; font-size:13px; color:var(--w); }
+  code { font-family:ui-monospace, "JetBrains Mono", monospace; }
+  @media (max-width:600px){ header.site nav{display:none} header.site{padding:16px} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo" href="#"><img src="logo-horizontal-escuro-animado.svg" alt="Gustavo Martins"></a>
+  <nav><a href="#">~/projetos</a><a href="#">~/sobre</a><a href="#">~/contato</a></nav>
+</header>
+
+<main>
+  <h1>Kit de logo {gm}</h1>
+  <p>O cabeçalho acima é como o logo fica no seu portfólio, com o cursor piscando.</p>
+
+  <h2>1. Logo animado no cabeçalho</h2>
+  <p>O arquivo <code>-animado.svg</code> já traz a animação do cursor. Basta usar como imagem comum. Quem ativou "reduzir movimento" no sistema vê o cursor parado.</p>
+<pre><code>&lt;a class="logo" href="/"&gt;
+  &lt;img src="/logo-horizontal-escuro-animado.svg" alt="Gustavo Martins" height="40"&gt;
+&lt;/a&gt;</code></pre>
+
+  <h2>2. Versões</h2>
+  <div class="grid">
+    <div class="tile dark"><img src="logo-vertical-escuro-animado.svg" alt=""></div>
+    <div class="tile light"><img src="logo-vertical-claro-animado.svg" alt=""></div>
+    <div class="tile dark"><img src="logo-horizontal-escuro.svg" alt=""></div>
+    <div class="tile light"><img src="logo-horizontal-claro.svg" alt=""></div>
+    <div class="tile dark"><img src="simbolo-escuro.svg" alt="" style="height:80px"></div>
+    <div class="tile dark"><img src="favicon/favicon-192.png" alt="" style="height:96px"></div>
+  </div>
+
+  <h2>3. Ícone da aba (favicon)</h2>
+  <p>Copie a pasta <code>favicon/</code> para a raiz do site e cole no <code>&lt;head&gt;</code>:</p>
+<pre><code>&lt;link rel="icon" href="/favicon/favicon.ico" sizes="any"&gt;
+&lt;link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"&gt;
+&lt;meta name="theme-color" content="#0B0C0A"&gt;</code></pre>
+
+  <h2>4. Prévia ao compartilhar o link (WhatsApp, LinkedIn)</h2>
+<pre><code>&lt;meta property="og:image" content="https://SEU-DOMINIO/og-image.png"&gt;</code></pre>
+  <img src="og-image.png" alt="" style="width:100%;border-radius:12px">
+</main>
+</body>
+</html>
