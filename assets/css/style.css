@@ -1065,8 +1065,7 @@ section { padding: clamp(56px, 8vh, 96px) 0; }
 img.project-thumb { display: block; height: auto; }
 
 
-/* >>> gm-credito */
-/* Selo "Desenvolvido por {gm}" — luz verde passando da esquerda para a direita */
+/* >>> gm-credito: selo "Desenvolvido por {gm}" (luz verde passando) */
 .gm-credito {
   display: inline-flex;
   align-items: center;
@@ -1081,7 +1080,12 @@ img.project-thumb { display: block; height: auto; }
   --gm-letras: #EEF0E4;
 }
 .gm-credito--claro { color: #5B6150; --gm-luz: #5E7A12; --gm-base: rgba(91, 97, 80, .95); --gm-letras: #0B0C0A; }
+.dark .gm-credito--claro, [data-tema="escuro"] .gm-credito--claro {
+  color: #9AA088; --gm-luz: #D4EC7E; --gm-base: rgba(154, 160, 136, .9); --gm-letras: #EEF0E4;
+}
 .gm-credito__logo { height: 1.7em; width: auto; flex: none; color: var(--gm-letras); }
+.gm-credito__texto { white-space: nowrap; }
+.gm-credito--compacto { font-size: 10px; letter-spacing: .04em; gap: .45em; }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .gm-credito__texto {
     background-image: linear-gradient(100deg, var(--gm-base) 38%, var(--gm-luz) 50%, var(--gm-base) 62%);
@@ -1091,7 +1095,6 @@ img.project-thumb { display: block; height: auto; }
     -webkit-text-fill-color: transparent;
     animation: gm-credito-luz 4.5s linear infinite;
   }
-  /* quando a luz chega ao fim do texto, o {gm} acende em verde */
   .gm-credito__logo { animation: gm-credito-brilho 4.5s linear infinite; }
 }
 .gm-credito:hover .gm-credito__texto { -webkit-text-fill-color: var(--gm-luz); }
