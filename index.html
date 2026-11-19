@@ -297,27 +297,29 @@
             </div>
           </article>
 
-          <article class="card project reveal" data-type="profissional">
+          <article class="card project reveal" data-type="profissional" data-projeto="cardapio">
             <div class="project-thumb" data-capa="assets/img/projetos/cardapio/capa.webp"><span>Menu</span></div>
             <div class="project-body">
               <span class="card-tag">Profissional · Freelance</span>
-              <h3>Cardápio online para doceria</h3>
-              <p>Cardápio digital para uma doceria local: os clientes consultam os produtos direto pelo celular, sem
-                precisar de um cardápio impresso.</p>
-              <!-- CONFIRMAR: tecnologias usadas -->
-              <ul class="project-stack"></ul>
+              <h3>Cardápio online para cafeteria e doceria</h3>
+              <p>Vitrine de doces, montador de bolo em etapas e pedido enviado pronto pelo WhatsApp, direto do celular.</p>
+              <ul class="project-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li></ul>
+              <div class="project-links">
+                <button type="button" class="link-btn" data-abrir="cardapio">Ver projeto completo →</button>
+              </div>
             </div>
           </article>
 
-          <article class="card project reveal" data-type="pessoal">
-            <div class="project-thumb" data-capa="assets/img/projetos/conselho/capa.webp"><span>IFTO</span></div>
+          <article class="card project reveal" data-type="profissional" data-projeto="veiculos">
+            <div class="project-thumb" data-capa="assets/img/projetos/veiculos/capa.webp"><span>Auto</span></div>
             <div class="project-body">
-              <span class="card-tag">Acadêmico</span>
-              <h3>Sistema de Conselho de Classe</h3>
-              <p>Sistema para apoiar as reuniões de conselho de classe, desenvolvido durante a graduação em Sistemas de
-                Informação no IFTO.</p>
-              <!-- CONFIRMAR: tecnologias usadas -->
-              <ul class="project-stack"></ul>
+              <span class="card-tag">Profissional</span>
+              <h3>Vitrine digital para revenda de veículos</h3>
+              <p>Estoque com filtros, página do anúncio com simulador de parcelas e painel para a loja publicar seus carros.</p>
+              <ul class="project-stack"><li>Next.js</li><li>React</li><li>TypeScript</li><li>SQLite</li></ul>
+              <div class="project-links">
+                <button type="button" class="link-btn" data-abrir="veiculos">Ver projeto completo →</button>
+              </div>
             </div>
           </article>
 
@@ -849,6 +851,85 @@
 
       <p class="modal-note">Nos prints, nomes, telefones e e-mails de clientes e usuários foram substituídos por dados
         fictícios.</p>
+    </div>
+  </template>
+
+
+  <!-- Cardápio online (marca da cliente oculta: em negociação) -->
+  <template id="projeto-cardapio">
+    <figure><img src="assets/img/projetos/cardapio/01-inicio.webp" width="1600" height="1000" alt="Capa do cardápio com horário de funcionamento"><figcaption>Capa: status "aberto agora" e horários ao vivo</figcaption></figure>
+    <figure><img src="assets/img/projetos/cardapio/02-vitrine.webp" width="1600" height="1000" alt="Vitrine de doces com busca e categorias" loading="lazy"><figcaption>Vitrine com busca e categorias</figcaption></figure>
+    <figure><img src="assets/img/projetos/cardapio/03-monte-seu-bolo.webp" width="1600" height="1000" alt="Montador de bolo por tamanho" loading="lazy"><figcaption>Monte seu bolo: tamanho, massa, recheios e toque final</figcaption></figure>
+    <figure><img src="assets/img/projetos/cardapio/04-lojas.webp" width="1600" height="1000" alt="Lojas com mapa" loading="lazy"><figcaption>Duas lojas, com mapa carregado só após o consentimento</figcaption></figure>
+    <figure><img src="assets/img/projetos/cardapio/05-celular.webp" width="1600" height="1000" alt="Cardápio no celular" loading="lazy"><figcaption>Pensado primeiro para o celular</figcaption></figure>
+
+    <div class="modal-text">
+      <span class="card-tag">Profissional · Freelance</span>
+      <h2 id="modalTitulo">Cardápio online para cafeteria e doceria</h2>
+      <p class="modal-lead">Do cardápio impresso para o celular: o cliente escolhe, monta o bolo e envia o pedido pronto pelo WhatsApp.</p>
+
+      <h3>O desafio</h3>
+      <p>Uma cafeteria e doceria com duas lojas recebia pedidos de bolos e doces por mensagens soltas, com muita troca de informação até fechar cada encomenda.</p>
+
+      <h3>A solução</h3>
+      <p>Um cardápio digital rápido e bonito no celular. O cliente navega pela vitrine, monta o bolo passo a passo e o pedido chega organizado no WhatsApp da loja escolhida.</p>
+
+      <h3>Destaques</h3>
+      <ul class="modal-list">
+        <li>Vitrine de produtos com busca e categorias (sob encomenda, pronta entrega, doces, salgados, bebidas…)</li>
+        <li>Montador de bolo em etapas: tamanho, massa, recheios e toque final, com o preço de cada opção</li>
+        <li>Pedido enviado pronto pelo WhatsApp</li>
+        <li>Status "aberto agora" e horários de funcionamento</li>
+        <li>Duas lojas, com o mapa do Google carregado só depois do aceite de cookies (LGPD)</li>
+        <li>Campanhas sazonais que ligam e desligam sem mexer no layout</li>
+      </ul>
+
+      <h3>Tecnologias</h3>
+      <ul class="project-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Schema.org</li><li>Vercel</li></ul>
+
+      <p class="modal-note">Projeto em fase de aprovação com a cliente: nome, logo, endereços e telefones foram ocultados nas telas.</p>
+    </div>
+  </template>
+
+  <!-- Bortoloti Veículos -->
+  <template id="projeto-veiculos">
+    <figure><img src="assets/img/projetos/veiculos/01-inicio.webp" width="1600" height="1000" alt="Página inicial da Bortoloti Veículos"><figcaption>Início: busca por marca, categoria e preço</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/02-estoque.webp" width="1600" height="1000" alt="Estoque de veículos com filtros" loading="lazy"><figcaption>Estoque com filtros por marca, categoria e combustível</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/03-anuncio.webp" width="1600" height="1000" alt="Página do anúncio com galeria de fotos" loading="lazy"><figcaption>Anúncio com galeria de fotos e contato pelo WhatsApp</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/04-ficha-e-simulador.webp" width="1600" height="1000" alt="Ficha técnica e simulador de financiamento" loading="lazy"><figcaption>Ficha técnica, opcionais e simulador de parcelas</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/05-contato.webp" width="1600" height="1000" alt="Página de contato" loading="lazy"><figcaption>Contato: a mensagem cai direto no painel</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/06-painel.webp" width="1600" height="1000" alt="Visão geral do painel" loading="lazy"><figcaption>Painel: anúncios no ar, mensagens e mais vistos</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/07-anuncios.webp" width="1600" height="1000" alt="Lista de anúncios no painel" loading="lazy"><figcaption>Anúncios: no ar, rascunho, destaque e vendido</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/08-novo-anuncio.webp" width="1600" height="1000" alt="Cadastro de novo anúncio" loading="lazy"><figcaption>Novo anúncio com envio de fotos</figcaption></figure>
+    <figure><img src="assets/img/projetos/veiculos/09-mensagens.webp" width="1600" height="1000" alt="Mensagens recebidas" loading="lazy"><figcaption>Mensagens dos interessados (dados fictícios)</figcaption></figure>
+
+    <div class="modal-text">
+      <span class="card-tag">Profissional</span>
+      <h2 id="modalTitulo">Vitrine digital para revenda de veículos</h2>
+      <p class="modal-lead">Site e painel da Bortoloti Veículos: o cliente encontra o carro, simula a parcela e chama no WhatsApp; a loja publica sozinha.</p>
+
+      <h3>O desafio</h3>
+      <p>Uma revenda de seminovos precisava mostrar o estoque de forma profissional e publicar carros novos sem depender de terceiros.</p>
+
+      <h3>A solução</h3>
+      <p>Uma vitrine rápida com filtros e página completa de cada veículo, mais um painel onde o vendedor cadastra, destaca e marca como vendido em poucos cliques.</p>
+
+      <h3>Destaques</h3>
+      <ul class="modal-list">
+        <li>Busca e filtros por marca, categoria, combustível e preço</li>
+        <li>Página do anúncio com galeria, ficha técnica e opcionais</li>
+        <li>Simulador de financiamento com entrada e prazo</li>
+        <li>Favoritos salvos no navegador do visitante</li>
+        <li>Formulário de contato que vira mensagem no painel, com resposta pelo WhatsApp</li>
+        <li>Painel: anúncios no ar, rascunhos, destaques, vendidos, visualizações e envio de fotos</li>
+        <li>Login com senha protegida (scrypt) e sessão em cookie assinado</li>
+        <li>SEO com sitemap e robots</li>
+      </ul>
+
+      <h3>Tecnologias</h3>
+      <ul class="project-stack"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Tailwind 4</li><li>SQLite</li><li>Server Actions</li></ul>
+
+      <p class="modal-note">Nas telas, os dados de interessados foram substituídos por fictícios.</p>
     </div>
   </template>
 
