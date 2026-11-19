@@ -104,6 +104,24 @@
     });
   });
 
+  /* ---------- Capas dos projetos ---------- */
+  // Elementos com data-capa trocam para a capa só depois que ela carrega de verdade
+  // (se o arquivo ainda não existir, fica o print/placeholder atual).
+  document.querySelectorAll('[data-capa]').forEach((el) => {
+    const capa = new Image();
+    capa.onload = () => {
+      if (el.tagName === 'IMG') { el.src = capa.src; return; }
+      const img = document.createElement('img');
+      img.className = 'project-thumb';
+      img.src = capa.src;
+      img.alt = '';
+      img.width = 1600;
+      img.height = 1000;
+      el.replaceWith(img);
+    };
+    capa.src = el.dataset.capa;
+  });
+
   /* ---------- Modal de projeto com carrossel ---------- */
   // Cada projeto com detalhes tem um <template id="projeto-NOME">: as <figure> viram slides
   // e o .modal-text vai para o painel lateral. Abre por qualquer elemento com data-abrir="NOME"
@@ -196,17 +214,16 @@
   /* ---------- Terminal digitando ---------- */
   // EDITAR: personalize as linhas do terminal aqui
   const lines = [
-    { t: 'prompt', s: '$ whoami' },
-    { t: 'out', s: 'gustavo.martins — analista de sistemas' },
-    { t: 'prompt', s: '$ cat perfil.yml' },
-    { t: 'kv', k: 'foco:     ', s: 'devops + fullstack' },
-    { t: 'kv', k: 'base:     ', s: 'Porto Nacional, TO' },
-    { t: 'kv', k: 'cloud:    ', s: '[aws, oracle cloud]' },
-    { t: 'kv', k: 'stack:    ', s: '[laravel, typescript, docker, ci/cd]' },
-    { t: 'prompt', s: '$ git push origin main' },
-    { t: 'ok', s: '✔ pipeline: build → test → deploy' },
-    { t: 'ok', s: '✔ container publicado na AWS' },
-    { t: 'ok', s: '✔ no ar — pronto para o seu projeto' },
+    { t: 'prompt', s: '$ ./novo-projeto --cliente=você' },
+    { t: 'out', s: 'o que você precisa colocar no ar?' },
+    { t: 'ok', s: '✔ landing page que gera contatos' },
+    { t: 'ok', s: '✔ sistema ou ERP sob medida' },
+    { t: 'ok', s: '✔ automação para ganhar tempo' },
+    { t: 'prompt', s: '$ agenda --status' },
+    { t: 'kv', k: 'status:   ', s: 'aberta para novos projetos' },
+    { t: 'kv', k: 'orçamento:', s: ' sem compromisso' },
+    { t: 'prompt', s: '$ contato --whatsapp' },
+    { t: 'ok', s: '→ (63) 98404-9968 · bora tirar do papel?' },
   ];
 
   const code = document.getElementById('terminalCode');

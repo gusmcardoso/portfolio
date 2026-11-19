@@ -1007,3 +1007,59 @@ body.modal-open { overflow: hidden; }
   .projects { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .projects > .project:not(.featured) { grid-column: 1 / -1; }
 }
+
+/* ==========================================================
+   Página mais enxuta (reorganização de 2026-11)
+   ========================================================== */
+section { padding: clamp(56px, 8vh, 96px) 0; }
+.section-title { margin-bottom: 40px; }
+
+/* Menu: só o símbolo {gm} */
+.brand img { height: 34px; }
+@media (max-width: 400px) { .brand img { height: 30px; } }
+
+/* Serviços: 4 cards compactos */
+.services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.service p { font-size: 14.5px; }
+@media (max-width: 1000px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+/* Formação: técnico, faculdade e pós lado a lado; cursos numa linha discreta */
+.sub-title { margin-top: 56px; }
+.edu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; }
+.edu .edu-inst { margin-bottom: 0; }
+@media (max-width: 860px) { .edu-grid { grid-template-columns: 1fr; } }
+.edu-extra {
+  margin-top: 18px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.edu-extra span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Stack: um bloco só, com grupos de etiquetas */
+.stack-section { padding-top: 0; border-top: 0; }
+.stack-strip { display: grid; gap: 14px; padding: 26px 28px; }
+.stack-strip:hover { transform: none; }
+.stack-row { display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 16px; }
+.stack-row .project-stack { margin-top: 0; }
+.stack-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent-lift);
+}
+@media (max-width: 640px) {
+  .stack-row { grid-template-columns: 1fr; gap: 8px; }
+  .stack-strip { padding: 22px 20px; }
+}
+
+/* Capa no lugar do placeholder dos cards menores */
+img.project-thumb { display: block; height: auto; }
