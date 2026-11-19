@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # Imagem do portfólio: site estático servido por Nginx sem privilégios de root.
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 
 LABEL org.opencontainers.image.title="portfolio" \
       org.opencontainers.image.description="Portfólio de Gustavo Martins — Fullstack & DevOps" \
