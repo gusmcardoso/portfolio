@@ -43,7 +43,7 @@ jobs:
       - name: Nome da imagem (GHCR exige minúsculas)
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
 
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
 
       - name: Build local para teste
         uses: docker/build-push-action@v6
