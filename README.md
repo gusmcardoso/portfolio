@@ -101,3 +101,18 @@ TAG=<hash-do-commit> docker compose -f docker-compose.prod.yml up -d
   ```
 - **Validar HTML** antes do push: `npx html-validate@9 index.html credito/index.html`
 - **Selo "Desenvolvido por"** para sites de clientes: `credito/index.html`
+
+<br>
+
+---
+
+<div align="center">
+
+Desenvolvido por **Gustavo Martins** · Analista de Sistemas · Fullstack & DevOps
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gustavomartinsc)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/gusmcardoso)
+
+<sub>Código publicado para fins de portfólio. Todos os direitos reservados.</sub>
+
+</div>
