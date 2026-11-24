@@ -946,6 +946,10 @@ body.modal-open { overflow: hidden; }
   color: var(--text-dim);
 }
 .footer strong { color: var(--text); font-weight: 500; }
+.footer-creditos { display: flex; align-items: center; gap: 10px 20px; flex-wrap: wrap; }
+.selo-uivo { display: inline-flex; line-height: 0; opacity: .9; transition: opacity .2s; }
+.selo-uivo:hover { opacity: 1; }
+.selo-uivo img { height: 22px; width: auto; }
 .footer-dim { color: var(--muted); }
 
 /* ---------- Animação de entrada ---------- */
